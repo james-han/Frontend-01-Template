@@ -15,17 +15,16 @@
 2. enumerable：决定 for in 能否枚举该属性。
 3. configurable：决定该属性能否被删除或者改变特征值。
 
-# 如果我们要想改变属性的特征，或者定义访问器属性，我们可以使用 Object.defineProperty
+- 如果我们要想改变属性的特征，或者定义访问器属性，我们可以使用 Object.defineProperty
 
-# 在创建对象时，也可以使用 get 和 set 关键字来创建访问器属性
+- 在创建对象时，也可以使用 get 和 set 关键字来创建访问器属性
 
-# 所以在使用`o.a`的时候其实就是在调用a的get方法
-# 访问器属性跟数据属性不同，每次访问属性都会执行 getter 或者 setter 函数。这里我们的 getter 函数返回了 1，所以 o.a 每次都得到 1。
+- 所以在使用`o.a`的时候其实就是在调用a的get方法
+- 访问器属性跟数据属性不同，每次访问属性都会执行 getter 或者 setter 函数。这里我们的 getter 函数返回了 1，所以 o.a 每次都得到 1。
 
-# 语句
-# 语句分为简单语句和复合语句
+# 语句(简单语句和复合语句)
 
-# 简单语句
+- 简单语句
 
 1. ExpressionStatement ( a = 1 + 2 )
 2. EmptyStatement ( ; )
@@ -35,7 +34,7 @@
 6. BreakStatement ( break )
 7. ReturnStatement ( return )
 
-# 复合语句(由简单语句复合而来)
+- 复合语句(由简单语句复合而来)
 
 1. BlockStatement ( {...somecode} )
 2. IfStatement ( if(){...somecode} )
