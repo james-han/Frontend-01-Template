@@ -7,11 +7,11 @@ exports.cSSRules = function (text) {
     return rules.push(...ast.stylesheet.rules)
 }
 
-const match = function (element,selector) {
+const match = function (selector,element) {
     switch (true) {
         case !selector || !element.attributes:
             return false;
-        case selector.charAt(0) === "0":
+        case selector.charAt(0) === "#":
             let attr = element.attributes.filter(attr => attr.name === "id")[0];
             if (attr && attr.value === selector.replace("#", '')) {
                 return true;
@@ -65,13 +65,13 @@ exports.computeCSS = function(element,stack,rules){
     for (let rule of rules) {//
         let selectorParts = rule.selectors[0].split(" ").reverse();
 
-        if (!match(element, selectorParts[0])) {
+        if (!match(selectorParts[0],element)) {
             continue;
         }
 
         let j = 1;
         for (let i = 0; i < elements.length; i++){
-            if (match(elements[i], selectorParts[j])) {
+            if (match(selectorParts[j],elements[i])) {
                 j++;
             }
         }
